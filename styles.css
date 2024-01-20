@@ -1,0 +1,112 @@
+:root {
+    --background-color-main:#051937;
+    --background-color-second: #424656; 
+    --headin-color: #D4A418;
+    --color-button: #A7AABD;
+    --color-button-hover: rgb(172, 71, 172);
+    --color-button-active: #845cb3;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--background-color-main);
+    background-image: linear-gradient(to right bottom, #051937, #002d4b, #004258, #00575f, #146b60);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    padding: 60px 0;
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--headin-color);
+}
+.contaner {
+    border: black solid 1px;
+    border-radius: 15px;
+    height: 350px;
+    width: 400px;
+    background-color: var(--background-color-second);
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: inherit;
+    width: inherit;
+}
+
+.part {
+    height: 100%;
+}
+
+.input-part-of-container{
+    padding-top: 30px;
+}
+
+.input-part-of-container,
+.output-part-of-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: inherit;
+    width: inherit;
+}
+
+section {
+    width: inherit;
+    text-align: center;
+}
+
+#number {
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: var(--headin-color);
+    color: black;
+}
+
+#convert-btn {
+    height: 40px;
+    width: 150px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: var(--color-button);
+}
+
+#convert-btn:hover{
+    background-color: var(--color-button-hover);
+}
+
+#convert-btn:active {
+    background-color: var(--color-button-active);
+}
+
+.section-output {
+    height: 100%;
+}
+
+#output{
+    padding: 10px 0 0 0;
+    font-size: 3em;
+    color: gold;
+}
