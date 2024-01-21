@@ -6,6 +6,7 @@
     --color-button-hover: rgb(172, 71, 172);
     --color-button-active: #845cb3;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -82,6 +83,10 @@ section {
     font-size: 1.2em;
     background-color: var(--headin-color);
     color: black;
+}
+
+.section-btn {
+    padding-top: 25px;
 }
 
 #convert-btn {
