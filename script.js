@@ -1,4 +1,4 @@
-const number = document.getElementById('number');
+const innputNumber = document.getElementById('number');
 const convertBtn = document.getElementById('convert-btn');
 const output = document.getElementById('output');
 const romeNum = [
@@ -6,7 +6,7 @@ const romeNum = [
     ["CM", 900],
     ["D", 500],
     ["CD", 400],
-    ["c", 100],
+    ["C", 100],
     ["XC", 90],
     ["L", 50],
     ["XL", 40],
@@ -17,8 +17,9 @@ const romeNum = [
     ["I", 1]
 ];
 
+
 convertBtn.addEventListener('click', () => {
-    displayResult(number, output);
+    displayResult(innputNumber, output);
 });
 
 const displayResult = (input, elem) => {
@@ -34,19 +35,34 @@ const displayResult = (input, elem) => {
     } else {
         elem.style.fontSize = "3em";
         elem.style.color = "gold";
-        elem.textContent = trimZerosFromBeginnig(input.value);
+        elem.textContent = convert(trimZerosFromBeginnig(input.value));
     }
 };
 
 const trimZerosFromBeginnig = (num) => {
+    
     let arrNum = num.split("");
     let arabickNum = []; 
-    let tuggle = false;
+    let toggle = false;
         
-    for(let i = 0; i < arrNum.length; i++) {      
-        if (+arrNum[i] !== 0) tuggle = true;
-        if (tuggle === true) arabickNum.push(+arrNum[i]);
+    for (let i = 0; i < arrNum.length; i++) {      
+        if (+arrNum[i] !== 0) toggle = true;
+        if (toggle === true) arabickNum.push(+arrNum[i]);
     }
 
-    return arabickNum;
+    return arabickNum.join("");
 };  
+
+function convert(number) {
+    let str =''; 
+    
+    for (let i = 0; i < romeNum.length; i++){
+    
+        while(number >= romeNum[i][1]){
+            str += romeNum[i][0];
+            number -= romeNum[i][1];
+        }
+    }
+    
+    return str;
+}
